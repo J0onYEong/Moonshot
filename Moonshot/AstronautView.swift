@@ -36,7 +36,7 @@ struct AstronautView: View {
                         .scaledToFit()
                         .overlay {
                             Rectangle()
-                                .strokeBorder(.linearGradient(colors: [.red, .blue], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2.5)
+                                .strokeBorder(.linearGradient(colors: [.blue, .red], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2.5)
     
                         }
                         .padding(.top, 5)
@@ -72,13 +72,13 @@ struct AstronautView: View {
                                         .scaledToFit()
                                         .frame(height: 100)
                                         .padding(.top, 10)
-                                    ZStack {
-                                        Color.lightBackground
+                                    VStack {
                                         Text(mission.displayName)
                                             .font(.caption)
                                             .foregroundColor(.yellow)
                                     }
-                                    .frame(height: 30)
+                                    .frame(width: 100,height: 30)
+                                    .background(.lightBackground)
                                 }
                                 .frame(width: 100, height: 140)
                                 .padding(.bottom, 5)

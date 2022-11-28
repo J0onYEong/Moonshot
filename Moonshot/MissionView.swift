@@ -41,6 +41,8 @@ struct MissionView: View {
                         .scaledToFit()
                         .frame(width: geo.size.width*0.6)
                         .padding(.top)
+                    Text(mission.formattedLanchDate)
+                        .font(.caption)
                     Text("Mission Highlights")
                         .font(.title.bold())
                         .padding(.top, 5)
@@ -91,5 +93,13 @@ struct MissionView: View {
         .navigationTitle(mission.displayName)
         .navigationBarTitleDisplayMode(.inline)
         .background(.darkBackground)
+    }
+}
+
+struct MissionView_previews: PreviewProvider {
+    static var jsonData = JSONData()
+    static var previews: some View {
+        MissionView(mission: jsonData.missions[0], jsonData)
+            .preferredColorScheme(.dark)
     }
 }
