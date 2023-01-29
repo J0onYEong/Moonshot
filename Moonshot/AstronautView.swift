@@ -31,7 +31,7 @@ struct AstronautView: View {
                 .ignoresSafeArea()
             ScrollView {
                 VStack {
-                    Image(astronaut.id)
+                    Image(decorative: astronaut.id)
                         .resizable()
                         .scaledToFit()
                         .overlay {

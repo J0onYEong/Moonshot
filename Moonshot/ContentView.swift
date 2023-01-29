@@ -39,6 +39,8 @@ struct ContentView: View {
                     isList.toggle()
                 } label: {
                     Image(systemName: isList ? "rectangle.grid.2x2" : "list.bullet")
+                        .accessibilityLabel(isList ? "make it grid" : "make it list")
+                        .accessibilityRemoveTraits(.isImage)
                 }
             }
         }
@@ -72,6 +74,8 @@ struct ContentView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(.lightBackground)
                 )
+                .accessibilityElement()
+                .accessibilityLabel(mission.displayName)
             }
         }
     }

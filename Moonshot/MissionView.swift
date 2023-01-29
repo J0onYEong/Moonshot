@@ -36,13 +36,14 @@ struct MissionView: View {
         GeometryReader { geo in
             ScrollView {
                 VStack {
-                    Image(mission.imageName)
+                    Image(decorative: mission.imageName)
                         .resizable()
                         .scaledToFit()
                         .frame(width: geo.size.width*0.6)
                         .padding(.top)
                     Text(mission.formattedLanchDate)
                         .font(.caption)
+                        .accessibilityHidden(true)
                     Text("Mission Highlights")
                         .font(.title.bold())
                         .padding(.top, 5)
@@ -84,6 +85,9 @@ struct MissionView: View {
                                     }
                                 }
                                 .padding(.horizontal)
+                                .accessibilityElement()
+                                .accessibilityLabel("crew member \(member.astronaut.name)")
+                                .accessibilityAddTraits(.isButton)
                             }
                         }
                     }
